@@ -18,11 +18,6 @@ set(DOWNLOAD_EXTRACT_TIMESTAMP true)
 
 set(TENSORFLOW_DIR "tensorflow")
 
-find_program(SCCACHE sccache)
-
-set(CMAKE_C_COMPILER_LAUNCHER ${SCCACHE})
-set(CMAKE_CXX_COMPILER_LAUNCHER ${SCCACHE})
-
 # include tensorflow lite's cmake system into this project
 add_subdirectory("${TENSORFLOW_DIR}/tensorflow/lite" EXCLUDE_FROM_ALL)
 
