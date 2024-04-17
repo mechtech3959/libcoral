@@ -4,9 +4,6 @@ cmake_minimum_required(VERSION 3.29.2)
 # get abseil to shut up about propagating the C++ standard version
 set(ABSL_PROPAGATE_CXX_STD ON)
 
-# export compile_commands.json for clangd support
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 # set project name
 project(libcoral)
 
