@@ -7,7 +7,8 @@ set(ABSL_PROPAGATE_CXX_STD ON)
 # set project name
 project(libcoral)
 
-# use C++23
+# use C/C++23
+set(CMAKE_C_STANDARD 23)
 set(CMAKE_CXX_STANDARD 23)
 
 # not quite sure what this does ¯\_(ツ)_/¯
@@ -29,7 +30,7 @@ pkg_check_modules(deps REQUIRED IMPORTED_TARGET glib-2.0)
 pkg_check_modules(deps REQUIRED IMPORTED_TARGET gstreamer-1.0)
 
 # create a library for libcoral
-add_library(coral
+add_library(coral STATIC
 ${CMAKE_CURRENT_SOURCE_DIR}/coral/bbox_test.cc
 ${CMAKE_CURRENT_SOURCE_DIR}/coral/classification/adapter.cc
 ${CMAKE_CURRENT_SOURCE_DIR}/coral/classification/adapter_test.cc
