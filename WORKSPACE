@@ -23,27 +23,15 @@ local_repository(
 
 # ==================================================================
 
-# Add definition of tensorflow version 2.16.1 stable.
+# Add definition of tensorflow version 2.17.0 stable.
 #http_archive(
 #        name = "org_tensorflow",
 #        urls = [
-#            "https://github.com/tensorflow/tensorflow/archive/5bc9d26649cca274750ad3625bd93422617eed4b.tar.gz",
+#            "https://github.com/tensorflow/tensorflow/archive/ad6d8cc177d0c868982e39e0823d0efbfb95f04c.tar.gz",
 #        ],
-#        sha256 = "fe592915c85d1a89c20f3dd89db0772ee22a0fbda78e39aa46a778d638a96abc",
-#        strip_prefix = "tensorflow-" + "5bc9d26649cca274750ad3625bd93422617eed4b",
+#        sha256 = "75b8dc9b33afff6f2e2d2e2dacc26dd0973bdcee94eec2af290828c1bc574bdc,
+#        strip_prefix = "tensorflow-" + "ad6d8cc177d0c868982e39e0823d0efbfb95f04c",
 #        )
-
-# Add definition of tensorflow version 2.17.0-dev with visibility commit for SCHEMA.
-# Reference: https://github.com/tensorflow/tensorflow/issues/63074
-# This will be removed once TF 2.17.0 is stable.
-http_archive(
-        name = "org_tensorflow",
-        urls = [
-            "https://github.com/tensorflow/tensorflow/archive/79ecb3f8bb6bd73f0115fa9a97b630a6f745a426.tar.gz",
-        ],
-        sha256 = "488dcc18e8d3896a54c9abdc657c43a580d70d72d69e6d6db07a4be95cdfbc3e",
-        strip_prefix = "tensorflow-" + "79ecb3f8bb6bd73f0115fa9a97b630a6f745a426",
-        )
 
 http_archive(
     name = "bazel_skylib",
