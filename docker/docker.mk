@@ -24,7 +24,7 @@ chmod a+w /; \
 groupadd --gid $(shell id -g) $(shell id -g -n); \
 useradd -m -e '' -s /bin/bash --gid $(shell id -g) --uid $(shell id -u) $(shell id -u -n); \
 echo '$(shell id -u -n) ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers; \
-su $(shell id -u -n) $(if $(1),-c '$(1)',)
+su $(if $(1),-c '$(1)',)
 endef
 
 docker-image:
