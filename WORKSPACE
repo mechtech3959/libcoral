@@ -23,15 +23,15 @@ local_repository(
 
 # ==================================================================
 
-# Add definition of tensorflow version 2.17.0 stable.
-#http_archive(
-#        name = "org_tensorflow",
-#        urls = [
-#            "https://github.com/tensorflow/tensorflow/archive/ad6d8cc177d0c868982e39e0823d0efbfb95f04c.tar.gz",
-#        ],
-#        sha256 = "75b8dc9b33afff6f2e2d2e2dacc26dd0973bdcee94eec2af290828c1bc574bdc,
-#        strip_prefix = "tensorflow-" + "ad6d8cc177d0c868982e39e0823d0efbfb95f04c",
-#        )
+ Add definition of tensorflow version 2.17.1 stable.
+http_archive(
+        name = "org_tensorflow",
+        urls = [
+            "https://github.com/tensorflow/tensorflow/archive/3c92ac03cab816044f7b18a86eb86aa01a294d95.tar.gz",
+        ],
+        sha256 = "317dd95c4830a408b14f3e802698eb68d70d81c7c7cfcd3d28b0ba023fe84a68,
+        strip_prefix = "tensorflow-" + "3c92ac03cab816044f7b18a86eb86aa01a294d95",
+        )
 
 http_archive(
     name = "bazel_skylib",
