@@ -15,7 +15,6 @@ RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
       sudo \
       debhelper \
-      dh-python \
       python3-all \
       python3-numpy \
       python3-setuptools \
@@ -52,20 +51,10 @@ RUN if grep 'Bionic Beaver' /etc/os-release > /dev/null; then \
 
 # On older Ubuntu these packages can't be installed in a multi-arch fashion.
 # Instead we download the debs and extract them for build time linking.
-
-RUN if grep 'Noble Numbat' /etc/os-release > /dev/null; then \
-    mkdir /debs && chmod a=rwx /debs && cd /debs && apt-get update && apt-get download \
-    libglib2.0-0t64 \
-    libglib2.0-0t64:armhf \
-    libglib2.0-0t64:arm64; \
-    else \
-    mkdir /debs && chmod a=rwx /debs && cd /debs && apt-get update && apt-get download \
-    libglib2.0-0 \
-    libglib2.0-0:armhf \
-    libglib2.0-0:arm64; \
-    fi
-
-RUN cd /debs && apt-get update && apt-get download --ignore-missing \
+RUN mkdir /debs && chmod a=rwx /debs && cd /debs && apt-get update && apt-get download \
+  libglib2.0-0 \
+  libglib2.0-0:armhf \
+  libglib2.0-0:arm64 \
   libglib2.0-dev \
   libglib2.0-dev:armhf \
   libglib2.0-dev:arm64 \
